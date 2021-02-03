@@ -1,0 +1,23 @@
+﻿@model IEnumerable<Sapling>
+@{
+    ViewBag.Title = "Sapling List";
+}
+
+<div class="card-deck">
+    @foreach (var sapling in Model)
+    {
+    <div class="card m-3">
+        <div class="card-header">
+            <h3>@sapling.Name</h3>
+        </div>
+        <img class="card-img-top" src="~/images/AppleBearSapling.jpg" asp-append-version="true" />
+        @*<img class="card-img-top" src="./images/AppleBearSapling.jpg" asp-append-version="true" />*@
+        @*<img class="card-img-top" src="../images/AppleBearSapling.jpg" asp-append-version="true" />*@
+        <div class="card-footer text-center">
+            <a asp-controller="home" asp-action="details" asp-route-id="@sapling.Id" class="btn btn-primary m-1">View</a>
+            <a href="#" class="btn btn-primary m-1">Edit</a>
+            <a href="#" class="btn btn-danger m-1">Delete</a>
+        </div>
+    </div>
+    }
+</div>
